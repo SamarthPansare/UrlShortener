@@ -16,10 +16,10 @@ export class AppComponent {
   constructor(private apiService: ServiceService) { }
   shortenUrl() {
     this.apiService.getUrls(this.longUrl).subscribe((urls: any) => {
-      this.response = urls["result"];
+      this.response = urls;
       console.warn(urls);
-      console.warn(this.response);
-      this.shortUrl = this.response[<any>"short_link"];
+      // console.warn(this.response);
+      this.shortUrl = this.response[<any>"shrtlnk"];
       this.show=true;
     })
 
